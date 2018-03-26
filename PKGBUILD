@@ -11,8 +11,8 @@ source=("http://www.autokennzeichen.info/files/EuroPlate.ttf")
 
 md5sums=('97a834894e9186114b53cb801f73c18b')
 
-
 package() {
-	cd "/usr/share/fonts/"
-	make DESTDIR="EuroPlate/ttf/" install
+	cd "$srcdir"
+        install -dm755 "${pkgdir}/usr/share/fonts/EuroPlate"
+        install -Dm644 EuroPlate.ttf -t "${pkgdir}/usr/share/fonts/EuroPlate"
 }
